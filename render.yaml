@@ -12,8 +12,6 @@ services:
         value: "30 2 * * *"
       - key: DATA_DIR
         value: /var/data
-      - key: API_KEY
-        sync: false          # set manually in dashboard (optional)
     disk:
       name: nt-data
       mountPath: /var/data
