@@ -1,11 +1,14 @@
 {
   "name": "nt-pdf-archiver",
   "version": "1.0.0",
+  "description": "Daily Next Toppers PDF URL archiver with JSON storage and Render deployment.",
   "type": "module",
   "private": true,
+  "main": "server.mjs",
   "scripts": {
     "start": "node server.mjs",
-    "sync": "node sync.mjs"
+    "sync": "node sync.mjs",
+    "dev": "node --watch server.mjs"
   },
   "engines": {
     "node": ">=20"
