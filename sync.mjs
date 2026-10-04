@@ -117,7 +117,6 @@ async function appendJson(filePath, records) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed)) existing = parsed;
     } catch {
-      // corrupt file — start fresh but keep a backup
       const backup = `${filePath}.bak-${Date.now()}`;
       try {
         await writeFile(backup, await readFile(filePath, "utf8"));
