@@ -28,7 +28,7 @@ npm start
 | GET    | `/courses/:id`    | Full PDF URL array for one course          |
 | POST   | `/sync`           | Trigger sync manually (optional `?course=`)|
 
-If `API_KEY` is set, `POST /sync` requires header `x-api-key: <key>`.
+No authentication — anyone with the URL can call `POST /sync`.
 
 ## Data format
 
