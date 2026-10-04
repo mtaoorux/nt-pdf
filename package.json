@@ -1,16 +1,13 @@
 {
-  "name": "nt-pdf-archiver",
+  "name": "pdf-fetcher",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
-  },
-  "engines": {
-    "node": ">=18"
+    "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "node-cron": "^3.0.3"
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
   }
 }
