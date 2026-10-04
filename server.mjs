@@ -9,7 +9,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const DATA_DIR = process.env.DATA_DIR || "data";
 const SYNC_CRON = process.env.SYNC_CRON || "30 2 * * *"; // 02:30 UTC daily
-const API_KEY = process.env.API_KEY || ""; // optional, protects /sync
 
 let lastRun = null;
 let running = false;
@@ -78,11 +77,8 @@ app.get("/courses/:id", async (req, res) => {
   }
 });
 
-// Manual trigger (protected if API_KEY set)
+// Manual trigger — open, no auth
 app.post("/sync", async (req, res) => {
-  if (API_KEY && req.headers["x-api-key"] !== API_KEY) {
-    return res.status(401).json({ error: "unauthorized" });
-  }
   if (running) return res.status(409).json({ error: "sync already running" });
   running = true;
   try {
